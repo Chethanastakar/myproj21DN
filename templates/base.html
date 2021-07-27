@@ -1,0 +1,27 @@
+{%load static%}
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="{%static 'sample.css'%}">
+</head>
+<body>
+  <div class='container'>
+    <h1>customer info </h1><hr>
+    {% if customers %}
+      {% for p in customers %}
+    <h2>{{p.cname}} information</h2>
+    <ul>
+      <li>CUSTOMER ID:{{p.cid}}</li>
+      <li>CUSTOMER dob:{{p.dob}}</li>
+      <li>CUSTOMER balance:{{p.bal}}</li>
+      <li>CUSTOMER E-mail:{{p.email}}</li>
+      <li>CUSTOMER phone no:{{p.phoneno}}</li>
+      <li>CUSTOMER Address:{{p.address}}</li>
+    </ul>
+    <br>
+        {%endfor%}
+    {%else%}
+  <p>customer records are not available</p>
+  {%endif%}
+  </body>
+  </html>
